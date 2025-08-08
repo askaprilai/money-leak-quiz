@@ -65,55 +65,22 @@
             padding: 20px;
         }
 
-        .email-capture {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(55, 48, 163, 0.1) 100%);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 4px solid #1e3a8a;
-        }
-
-        .email-capture h3 {
-            color: #4a5568;
-            margin-bottom: 15px;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-        }
-
-        .email-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .email-form input {
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s ease;
-            width: 100%;
-        }
-
-        .email-form input:focus {
-            border-color: #1e3a8a;
-        }
-
-        .email-form button {
+        .start-quiz-btn {
             background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
+            padding: 18px 40px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             font-weight: 600;
-            transition: transform 0.2s ease;
-            align-self: stretch;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
-        .email-form button:hover {
-            transform: translateY(-2px);
+        .start-quiz-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
         }
 
         .quiz-start {
@@ -517,18 +484,6 @@
                 max-width: 100%;
                 padding-left: 20px;
             }
-
-            /* Final form mobile adjustments */
-            .final-form-container {
-                flex-direction: column !important;
-                gap: 12px !important;
-            }
-
-            .final-form-container input,
-            .final-form-container button {
-                min-width: auto !important;
-                width: 100% !important;
-            }
         }
 
         /* Medium screens */
@@ -590,23 +545,11 @@
         </div>
 
         <div class="quiz-content">
-            <!-- Email Capture -->
-            <div class="email-capture" id="emailCapture">
-                <h3>Get Your Personalized Money Leak Report</h3>
-                <p>Enter your details to receive your complete assessment results and action plan via email:</p>
-                <form class="email-form" id="emailForm">
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    <button type="submit">Start Quiz →</button>
-                </form>
-                <div id="emailError" class="error-message hidden">Please fill in all fields correctly.</div>
-            </div>
-
             <!-- Quiz Start Button -->
-            <div class="quiz-start hidden" id="quizStart">
+            <div class="quiz-start" id="quizStart">
                 <h3>Ready to Discover Your Money Leaks?</h3>
-                <p>Take this 5-minute assessment to see exactly where your business is losing profit.</p>
-                <button onclick="startQuiz()">Start Quiz →</button>
+                <p>Take this quick 5-minute assessment to identify where your business is losing profits through people management issues.</p>
+                <button onclick="startQuiz()" class="start-quiz-btn">Start Quiz →</button>
             </div>
 
             <!-- Progress Bar -->
@@ -790,7 +733,7 @@
 
                 <div class="cta-section">
                     <h3>Get Your Personalized Money Leak Action Plan</h3>
-                    <p>Your personalized money leak report has been sent to your email! Ready to plug these profit leaks?</p>
+                    <p>Your personalized money leak report is complete! Ready to plug these profit leaks?</p>
                     <div style="margin: 20px 0;">
                         <p style="font-size: 1.1em; margin-bottom: 25px; opacity: 0.9;">Join AskApril AI and get:</p>
                         <ul>
@@ -804,78 +747,17 @@
                     <a href="https://askaprilai.newzenler.com/courses/monthly" target="_blank" class="cta-button">Get My Money Leak Action Plan + Free Trial</a>
                     <p style="font-size: 0.9em; opacity: 0.8; margin-top: 15px;">Instant access • Detailed recommendations</p>
                 </div>
-
-                <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); color: white; padding: 40px 30px; border-radius: 20px; margin-top: 30px; text-align: center;">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
-                        <span style="font-size: 3rem;">💰</span>
-                        <h2 style="font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 300; margin: 0;">Money Leak Quiz</h2>
-                    </div>
-                    <h3 style="font-size: clamp(1.3rem, 3vw, 1.6rem); margin-bottom: 20px; font-weight: 300;">Discover How Much Money Your Business Is Losing</h3>
-                    
-                    <div style="background: rgba(255, 255, 255, 0.95); color: #4a5568; padding: 30px; border-radius: 20px; margin: 30px 0;">
-                        <div style="border-left: 4px solid #1e3a8a; padding-left: 20px; margin-bottom: 25px;">
-                            <h4 style="color: #2d3748; margin-bottom: 15px; font-size: clamp(1.2rem, 3vw, 1.4rem);">Get Your Personalized Money Leak Report</h4>
-                            <p style="color: #4a5568; font-size: clamp(0.9rem, 2.5vw, 1rem); line-height: 1.5;">Enter your details to receive your complete assessment results and action plan via email:</p>
-                        </div>
-                        
-                        <div class="final-form-container" style="display: flex; gap: 15px; flex-wrap: wrap; align-items: stretch;">
-                            <input type="text" placeholder="First Name" readonly value="" id="finalFirstName" style="flex: 1; min-width: 200px; padding: 15px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 16px; background: #f7fafc;">
-                            <input type="email" placeholder="Email Address" readonly value="" id="finalEmail" style="flex: 1; min-width: 250px; padding: 15px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 16px; background: #f7fafc;">
-                            <button style="background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); color: white; border: none; padding: 15px 30px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: default; min-width: 150px;">✅ Complete</button>
-                        </div>
-                        
-                        <p style="color: #48bb78; font-size: clamp(0.9rem, 2.5vw, 1rem); margin-top: 15px; font-weight: 600;">
-                            <strong>Report sent successfully to <span id="finalResultName"></span> at <span id="finalResultEmail"></span></strong>
-                        </p>
-                        <p style="color: #718096; font-size: clamp(0.8rem, 2vw, 0.9rem); margin-top: 10px;">Check your inbox for your detailed money leak report and action plan!</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Initialize EmailJS
-        emailjs.init("SAU17WFhPmeQLrng7");
-
         let currentQuestion = 1;
         const totalQuestions = 5;
         let userAnswers = {};
-        let userData = {};
 
-        // Email form submission
-        document.getElementById('emailForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('firstName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            
-            if (!firstName || !email || !isValidEmail(email)) {
-                showError('Please fill in all fields correctly.');
-                return;
-            }
-            
-            userData = { firstName, email };
-            startQuizFromEmail();
-        });
-
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        function showError(message) {
-            const errorDiv = document.getElementById('emailError');
-            errorDiv.textContent = message;
-            errorDiv.classList.remove('hidden');
-            
-            setTimeout(() => {
-                errorDiv.classList.add('hidden');
-            }, 5000);
-        }
-
-        function startQuizFromEmail() {
-            // Hide email capture and show quiz
-            document.getElementById('emailCapture').classList.add('hidden');
+        function startQuiz() {
+            document.getElementById('quizStart').classList.add('hidden');
             document.getElementById('quizQuestions').classList.remove('hidden');
             document.getElementById('navigation').classList.remove('hidden');
             document.getElementById('progressBar').classList.remove('hidden');
@@ -983,12 +865,6 @@
             document.getElementById('navigation').classList.add('hidden');
             document.getElementById('progressBar').classList.add('hidden');
             document.getElementById('results').classList.add('active');
-            
-            // Display user info in final section
-            document.getElementById('finalFirstName').value = userData.firstName;
-            document.getElementById('finalEmail').value = userData.email;
-            document.getElementById('finalResultName').textContent = userData.firstName;
-            document.getElementById('finalResultEmail').textContent = userData.email;
             
             // Display score (inverted - higher score means lower leak risk)
             const leakPercentage = 100 - percentageScore;
