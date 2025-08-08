@@ -83,6 +83,57 @@
             box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
         }
 
+        .email-capture {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(55, 48, 163, 0.1) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .email-capture h3 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .email-form input {
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            width: 100%;
+        }
+
+        .email-form input:focus {
+            border-color: #1e3a8a;
+        }
+
+        .email-form button {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            align-self: stretch;
+        }
+
+        .email-form button:hover {
+            transform: translateY(-2px);
+        }
+
         .quiz-start {
             text-align: center;
             padding: 30px;
@@ -731,7 +782,19 @@
 
                 <div id="leakCategories"></div>
 
-                <div class="cta-section">
+                <!-- Email Capture for Results -->
+                <div class="email-capture" id="emailCapture">
+                    <h3>Get Your Personalized Money Leak Report</h3>
+                    <p>Enter your details to receive your complete assessment results and action plan:</p>
+                    <form class="email-form" id="emailForm">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <button type="submit">Get My Action Plan →</button>
+                    </form>
+                    <div id="emailError" class="error-message" style="display: none; color: #e53e3e; margin-top: 10px; font-size: 0.9em;"></div>
+                </div>
+
+                <div class="cta-section" id="ctaSection" style="display: none;">
                     <h3>Get Your Personalized Money Leak Action Plan</h3>
                     <p>Your personalized money leak report is complete! Ready to plug these profit leaks?</p>
                     <div style="margin: 20px 0;">
@@ -751,10 +814,15 @@
         </div>
     </div>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS
+        emailjs.init("SAU17WFhPmeQLrng7");
+
         let currentQuestion = 1;
         const totalQuestions = 5;
         let userAnswers = {};
+        let userData = {};
 
         function startQuiz() {
             document.getElementById('quizStart').classList.add('hidden');
@@ -764,6 +832,48 @@
             
             updateProgress();
             updateNavigation();
+        }
+
+        // Email form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('emailForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const firstName = document.getElementById('firstName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                if (!firstName || !email || !isValidEmail(email)) {
+                    showError('Please fill in all fields correctly.');
+                    return;
+                }
+                
+                userData = { firstName, email };
+                
+                // Send email and show CTA
+                const totalScore = Object.values(userAnswers).reduce((sum, value) => sum + value, 0);
+                const percentageScore = Math.round((totalScore / 15) * 100);
+                const leakPercentage = Math.round(((15 - totalScore) / 15) * 100);
+                
+                sendResultsEmail(totalScore, percentageScore, leakPercentage);
+                
+                // Hide email form and show CTA
+                document.getElementById('emailCapture').style.display = 'none';
+                document.getElementById('ctaSection').style.display = 'block';
+            });
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('emailError');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
         }
 
         // Start quiz function (if we had a separate start button)
@@ -977,7 +1087,7 @@
                 q5_score: userAnswers.q5
             };
             
-            emailjs.send('service_vntq4ai', 'template_money_leak', emailParams)
+            emailjs.send('service_vntq4ai', 'template_j1dh6rf', emailParams)
                 .then(function(response) {
                     console.log('Results email sent successfully:', response);
                 }, function(error) {
