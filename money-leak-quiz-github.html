@@ -782,33 +782,61 @@
 
                 <div id="leakCategories"></div>
 
+                <!-- Green Checklist Box -->
+                <div style="margin: 30px 0; padding: 25px; background: white; border-radius: 15px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <h3 style="color: #2d3748; margin-bottom: 20px; font-size: 1.4em;">Ready to Transform From Operator to Owner?</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 25px; color: #4a5568;">Now let April help you plug these profit leaks and build the business you dreamed of.</p>
+                    
+                    <div style="margin: 25px 0;">
+                        <p style="font-size: 1.1em; margin-bottom: 20px; font-weight: 600; color: #2d3748;">Get your step-by-step roadmap to move from operator to owner:</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>Detailed implementation roadmap</strong> - Exact steps to fix each money leak in your business</span>
+                            </li>
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>People management templates</strong> - Ready-to-use systems for accountability and performance</span>
+                            </li>
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>30-day free trial to AskApril AI</strong> - Full access to all resources and tools</span>
+                            </li>
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>Weekly office hours with April</strong> - Get personalized guidance and ask your specific questions</span>
+                            </li>
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>From operator to owner guide</strong> - Complete transformation blueprint with timelines</span>
+                            </li>
+                            <li style="margin: 10px 0; display: flex; align-items: flex-start; gap: 12px;">
+                                <span style="color: #10b981; font-size: 1.1em; line-height: 1; margin-top: 2px;">✅</span>
+                                <span><strong>Personal help to plug your leaks</strong> - April's proven strategies to stop profit drain immediately</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- Email Capture for Results -->
                 <div class="email-capture" id="emailCapture">
-                    <h3>Get Your Personalized Money Leak Report</h3>
-                    <p>Enter your details to receive your complete assessment results and action plan:</p>
                     <form class="email-form" id="emailForm">
                         <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
-                        <button type="submit">Get My Action Plan →</button>
+                        <button type="submit">Get April's Profit Plugging Strategies →</button>
                     </form>
                     <div id="emailError" class="error-message" style="display: none; color: #e53e3e; margin-top: 10px; font-size: 0.9em;"></div>
                 </div>
 
+                <!-- Final CTA Section (hidden until email submitted) -->
                 <div class="cta-section" id="ctaSection" style="display: none;">
-                    <h3>Get Your Personalized Money Leak Action Plan</h3>
-                    <p>Your personalized money leak report is complete! Ready to plug these profit leaks?</p>
-                    <div style="margin: 20px 0;">
-                        <p style="font-size: 1.1em; margin-bottom: 25px; opacity: 0.9;">Join AskApril AI and get:</p>
-                        <ul>
-                            <li>✅ Detailed implementation roadmap</li>
-                            <li>✅ People management templates</li>
-                            <li>✅ 30-day free trial to AskApril AI</li>
-                            <li>✅ Weekly office hours access</li>
-                            <li>✅ From operator to owner guide</li>
-                        </ul>
+                    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); padding: 25px; border-radius: 15px; margin: 25px 0; border-left: 4px solid #10b981; text-align: center;">
+                        <h3 style="color: white; margin-bottom: 15px;">🎯 Ready to Start Your Transformation?</h3>
+                        <p style="font-size: 1em; color: white; line-height: 1.5; margin-bottom: 20px;">Your personalized money leak report has been sent to your email! Now get immediate access to April's complete profit-plugging system.</p>
+                        
+                        <a href="https://askaprilai.newzenler.com/courses/builder-subscription/buy" target="_blank" class="cta-button" style="font-size: 1.1em; padding: 18px 35px;">Start My 30-Day Free Trial + Get Action Plan</a>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 15px; color: white;">Instant access • 30-day free trial • Cancel anytime • Weekly office hours with April</p>
                     </div>
-                    <a href="https://askaprilai.newzenler.com/courses/monthly" target="_blank" class="cta-button">Get My Money Leak Action Plan + Free Trial</a>
-                    <p style="font-size: 0.9em; opacity: 0.8; margin-top: 15px;">Instant access • Detailed recommendations</p>
                 </div>
             </div>
         </div>
@@ -826,6 +854,7 @@
 
         function startQuiz() {
             document.getElementById('quizStart').classList.add('hidden');
+            document.querySelector('.header').style.display = 'none';  // Hide header during quiz
             document.getElementById('quizQuestions').classList.remove('hidden');
             document.getElementById('navigation').classList.remove('hidden');
             document.getElementById('progressBar').classList.remove('hidden');
@@ -834,33 +863,84 @@
             updateNavigation();
         }
 
-        // Email form submission
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('emailForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const firstName = document.getElementById('firstName').value.trim();
-                const email = document.getElementById('email').value.trim();
-                
-                if (!firstName || !email || !isValidEmail(email)) {
-                    showError('Please fill in all fields correctly.');
-                    return;
-                }
-                
-                userData = { firstName, email };
-                
-                // Send email and show CTA
-                const totalScore = Object.values(userAnswers).reduce((sum, value) => sum + value, 0);
-                const percentageScore = Math.round((totalScore / 15) * 100);
-                const leakPercentage = Math.round(((15 - totalScore) / 15) * 100);
-                
-                sendResultsEmail(totalScore, percentageScore, leakPercentage);
-                
-                // Hide email form and show CTA
-                document.getElementById('emailCapture').style.display = 'none';
-                document.getElementById('ctaSection').style.display = 'block';
-            });
-        });
+        // Email form submission handler
+        function setupEmailForm() {
+            const emailForm = document.getElementById('emailForm');
+            if (emailForm) {
+                emailForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    console.log('Email form submitted');
+                    
+                    const firstName = document.getElementById('firstName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    
+                    if (!firstName || !email || !isValidEmail(email)) {
+                        showError('Please fill in all fields correctly.');
+                        return;
+                    }
+                    
+                    userData = { firstName, email };
+                    console.log('User data stored:', userData);
+                    
+                    // Send results email
+                    const totalScore = Object.values(userAnswers).reduce((sum, value) => sum + value, 0);
+                    const percentageScore = Math.round((totalScore / 15) * 100);
+                    const leakPercentage = Math.round(((15 - totalScore) / 15) * 100);
+                    
+                    // Save to Google Sheets
+                    saveToGoogleSheets(firstName, email, totalScore, percentageScore, leakPercentage);
+                    
+                    sendResultsEmail(totalScore, percentageScore, leakPercentage);
+                    
+                    // Hide email form and show CTA
+                    document.getElementById('emailCapture').style.display = 'none';
+                    document.getElementById('ctaSection').style.display = 'block';
+                    console.log('CTA section should now be visible');
+                });
+            }
+        }
+
+        // Initialize email form when DOM is ready
+        document.addEventListener('DOMContentLoaded', setupEmailForm);
+        
+        // Also setup when results are shown (as backup)
+        function showResults() {
+            // Calculate total score
+            const totalScore = Object.values(userAnswers).reduce((sum, value) => sum + value, 0);
+            const maxScore = 15; // 5 questions × 3 max points each
+            const percentageScore = Math.round((totalScore / maxScore) * 100);
+            
+            // Hide quiz and header, show results section
+            document.getElementById('quizQuestions').classList.add('hidden');
+            document.getElementById('navigation').classList.add('hidden');
+            document.getElementById('progressBar').classList.add('hidden');
+            document.querySelector('.header').style.display = 'none';  // Hide the header with subtitle
+            document.getElementById('results').classList.add('active');
+            
+            // Display score (inverted - higher score means lower leak risk)
+            const leakPercentage = 100 - percentageScore;
+            document.getElementById('totalScore').textContent = `${leakPercentage}%`;
+            
+            // Score description
+            let scoreDescription;
+            if (percentageScore >= 80) {
+                scoreDescription = "Low Risk - You have strong people management systems in place.";
+            } else if (percentageScore >= 60) {
+                scoreDescription = "Moderate Risk - Some improvements needed to prevent profit leaks.";
+            } else if (percentageScore >= 40) {
+                scoreDescription = "High Risk - Significant money leaks are draining your profits.";
+            } else {
+                scoreDescription = "Critical Risk - Major profit leaks are seriously impacting your business.";
+            }
+            
+            document.getElementById('scoreDescription').textContent = scoreDescription;
+            
+            // Generate detailed breakdown
+            generateDetailedBreakdown();
+            
+            // Setup email form (as backup)
+            setTimeout(setupEmailForm, 100);
+        }
 
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -876,15 +956,38 @@
             }, 5000);
         }
 
-        // Start quiz function (if we had a separate start button)
-        function startQuiz() {
-            document.getElementById('quizStart').classList.add('hidden');
-            document.getElementById('quizQuestions').classList.remove('hidden');
-            document.getElementById('navigation').classList.remove('hidden');
-            document.getElementById('progressBar').classList.remove('hidden');
+        // Save to Google Sheets function
+        function saveToGoogleSheets(firstName, email, totalScore, percentageScore, leakPercentage) {
+            // Replace this URL with your Google Apps Script web app URL
+            const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
             
-            updateProgress();
+            const data = {
+                firstName: firstName,
+                email: email,
+                totalScore: totalScore,
+                percentageScore: percentageScore,
+                leakPercentage: leakPercentage,
+                q1_score: userAnswers.q1 || 0,
+                q2_score: userAnswers.q2 || 0,
+                q3_score: userAnswers.q3 || 0,
+                q4_score: userAnswers.q4 || 0,
+                q5_score: userAnswers.q5 || 0
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }).then(() => {
+                console.log('Data saved to Google Sheets successfully');
+            }).catch(error => {
+                console.error('Error saving to Google Sheets:', error);
+            });
         }
+
 
         // Answer option handling
         document.addEventListener('change', function(e) {
@@ -970,10 +1073,11 @@
             const maxScore = 15; // 5 questions × 3 max points each
             const percentageScore = Math.round((totalScore / maxScore) * 100);
             
-            // Hide quiz, show results
+            // Hide quiz and header, show results section
             document.getElementById('quizQuestions').classList.add('hidden');
             document.getElementById('navigation').classList.add('hidden');
             document.getElementById('progressBar').classList.add('hidden');
+            document.querySelector('.header').style.display = 'none';  // Hide the header with subtitle
             document.getElementById('results').classList.add('active');
             
             // Display score (inverted - higher score means lower leak risk)
@@ -996,9 +1100,6 @@
             
             // Generate detailed breakdown
             generateDetailedBreakdown();
-            
-            // Send results email
-            sendResultsEmail(totalScore, percentageScore, leakPercentage);
         }
 
         function generateDetailedBreakdown() {
@@ -1087,7 +1188,7 @@
                 q5_score: userAnswers.q5
             };
             
-            emailjs.send('service_vntq4ai', 'template_j1dh6rf', emailParams)
+            emailjs.send('service_vntq4ai', 'template_8td5nlh', emailParams)
                 .then(function(response) {
                     console.log('Results email sent successfully:', response);
                 }, function(error) {
